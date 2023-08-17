@@ -4,3 +4,4 @@
 MOUSEKEY_ENABLE = yes        # Mouse keys
 ENCODER_ENABLE = no
 RGB_MATRIX_ENABLE = no
+CAPS_WORD_ENABLE = yes
