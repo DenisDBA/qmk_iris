@@ -38,7 +38,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_BONE] = LAYOUT(
   //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
-     KC_NO,  KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,                           KC_NO,    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
+     KC_NO,   KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,                           KC_NO,    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
      KC_TAB,  KC_J,    KC_D,    DE_UDIA, DE_ADIA, DE_ODIA,                             KC_P,    KC_H,    KC_L,    KC_M,    KC_W,    DE_SS,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
@@ -52,9 +52,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_LOWER] = LAYOUT(
   //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
-     KC_NO,  KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,                           KC_NO,    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
+     KC_NO,   KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,                           KC_NO,    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-     KC_NO,   KC_NO,   KC_BSPC, KC_DEL,   KC_NO,    KC_NO,                               KC_0,   KC_7,    KC_8,     KC_9,   KC_PLUS, KC_MINS,
+     KC_NO,   KC_NO,   KC_BSPC, KC_DEL,   KC_NO,    KC_NO,                             KC_0,   KC_7,    KC_8,     KC_9,   KC_PLUS, KC_MINS,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
      KC_DEL, KC_TRNS, KC_LEFT, KC_RGHT, KC_UP, KC_PGUP,                                KC_RBRC, RSFT_T(KC_4), RCTL_T(KC_5), LALT_T(KC_6), LGUI_T(KC_COMM), KC_DOT, 
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
