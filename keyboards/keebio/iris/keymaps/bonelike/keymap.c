@@ -38,13 +38,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_BONE] = LAYOUT(
   //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
-     KC_NO,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                               KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC,
+     KC_NO,  KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,                           KC_NO,    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-     KC_TAB,  KC_J,    KC_D,    DE_UDIA,    DE_ADIA,    DE_ODIA,                               KC_P,    KC_H,    KC_L,    KC_M,    KC_W,    DE_SS,
+     KC_TAB,  KC_J,    KC_D,    DE_UDIA, DE_ADIA, DE_ODIA,                             KC_P,    KC_H,    KC_L,    KC_M,    KC_W,    DE_SS,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
      KC_ESC, LGUI_T(KC_C), LALT_T(KC_T), LCTL_T(KC_I), LSFT_T(KC_E), KC_O,            KC_B, RSFT_T(KC_N), RCTL_T(KC_R), LALT_T(KC_S), LGUI_T(KC_G), KC_Q,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     KC_LSFT,  KC_F,    KC_V,   KC_U, KC_A, KC_X, KC_HOME,          KC_END,  DE_Y,    DE_Z,   KC_COMM,  KC_DOT,  KC_K,  KC_RSFT,
+     KC_LSFT,  KC_F,    KC_V,   KC_U,     KC_A,   KC_X,    KC_HOME,          KC_END,  DE_Y,    DE_Z,   KC_COMM,  KC_DOT,  KC_K,    KC_RSFT,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
                            LT(_HOTKEY,KC_ESC),LT(_LOWER,KC_SPC), LT(_HOTKEY,KC_BSPC),         KC_SPC,  LT(_RAISE,KC_ENT),   LT(_ADJUST,KC_TAB)
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
@@ -52,9 +52,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_LOWER] = LAYOUT(
   //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
-     KC_TILD, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,                            KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_BSPC,
+     KC_NO,  KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,                           KC_NO,    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-     QK_BOOT,  KC_1,   KC_BSPC, KC_DEL,   KC_4,    KC_5,                               KC_0,   KC_7,    KC_8,     KC_9,   KC_PLUS, KC_MINS,
+     KC_NO,   KC_NO,   KC_BSPC, KC_DEL,   KC_NO,    KC_NO,                               KC_0,   KC_7,    KC_8,     KC_9,   KC_PLUS, KC_MINS,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
      KC_DEL, KC_TRNS, KC_LEFT, KC_RGHT, KC_UP, KC_PGUP,                                KC_RBRC, RSFT_T(KC_4), RCTL_T(KC_5), LALT_T(KC_6), LGUI_T(KC_COMM), KC_DOT, 
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
