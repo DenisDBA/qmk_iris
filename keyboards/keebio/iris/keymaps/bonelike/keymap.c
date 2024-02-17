@@ -248,3 +248,10 @@ bool caps_word_press_user(uint16_t keycode) {
             return false;  // Deactivate Caps Word.
     }
 }
+
+// Combos
+const uint16_t PROGMEM insert_combo[] = {KC_ESC, LGUI_T(KC_C), COMBO_END};
+
+combo_t key_combos[] = {
+    COMBO(insert_combo, KC_INSERT),
+};
