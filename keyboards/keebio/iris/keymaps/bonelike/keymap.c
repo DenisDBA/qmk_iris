@@ -12,14 +12,12 @@
 #define _RAISE 2
 #define _ADJUST 3
 #define _HOTKEY 4
-#define _QWERTZ 5
 
 // function declaration
 void winrun(char prog[]);
 
 enum custom_keycodes {
   BONE = SAFE_RANGE,
-  QWERTZ,
   LOWER,
   RAISE,
   ADJUST,
@@ -86,7 +84,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
      _______, LGUI_T(KC_C), LALT_T(KC_T), LCTL_T(KC_PSTE), LSFT_T(KC_COPY), KC_VOLU,   KC_WH_U, KC_MS_L, KC_MS_D, KC_MS_R, _______, _______,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     _______, _______, _______, _______, KC_CUT, KC_VOLD, DF(_QWERTZ),       DF(_ADJUST), KC_WH_D, KC_BTN1, KC_BTN2, KC_BTN3, KC_BTN4, _______,
+     _______, _______, _______, _______, KC_CUT,  KC_VOLD, _______,       DF(_ADJUST), KC_WH_D, KC_BTN1, KC_BTN2, KC_BTN3, KC_BTN4, _______,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
                                     _______, _______, _______,                   _______, DF(_BONE), DF(_BONE)
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
@@ -102,20 +100,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      KC_LSFT, MFIREFOX, KC_V,   DE_UDIA, DE_ADIA, DE_ODIA, KC_HOME,          KC_END,  DE_Y,    DE_Z,   KC_COMM,  KC_DOT,  KC_K,  KC_RSFT,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
                                     _______,  _______,   _______,                 _______,  _______,   _______ 
-                                // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
-  ),
-
-  [_QWERTZ] = LAYOUT(
-  //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
-     KC_SLEP,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                               KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC,
-  //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-     KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                               DE_Z,    KC_U,    KC_I,    KC_O,    KC_P,    DE_UDIA,
-  //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-     KC_ESC, LGUI_T(KC_A), LALT_T(KC_S), LCTL_T(KC_D), LSFT_T(KC_F), KC_G,            KC_H, RSFT_T(KC_J), RCTL_T(KC_K), LALT_T(KC_L), LGUI_T(DE_ODIA), DE_ADIA,
-  //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     KC_LSFT,  DE_Y,    KC_X,   DE_C, DE_V, DE_B, KC_HOME,          KC_END,  DE_N,    DE_M,   KC_COMM,  KC_DOT,  KC_K,  DE_SS,
-  //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
-                                    LT(_HOTKEY,KC_ESC),   MO(_LOWER),   KC_SPC,                    KC_ENT,  MO(_RAISE),   LT(_ADJUST,KC_TAB)
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
   )
 };
@@ -134,12 +118,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case BONE:
       if (record->event.pressed) {
         set_single_persistent_default_layer(_BONE);
-      }
-      return false;
-      break;
-   case QWERTZ:
-      if (record->event.pressed) {
-        set_single_persistent_default_layer(_QWERTZ);
       }
       return false;
       break;
