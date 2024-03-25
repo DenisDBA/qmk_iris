@@ -10,7 +10,7 @@
 #define _BONE 0
 #define _LOWER 1
 #define _RAISE 2
-#define _ADJUST 3
+#define _MOUSE 3
 #define _FUNC 4
 
 
@@ -18,7 +18,7 @@ enum custom_keycodes {
   BONE = SAFE_RANGE,
   LOWER,
   RAISE,
-  ADJUST,
+  MOUSE,
   FUNC,
 };
 
@@ -34,7 +34,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
      KC_LSFT,  KC_F,    KC_V,   KC_U,     KC_A,   KC_X,    KC_HOME,          KC_END,  DE_Y,    DE_Z,   KC_COMM,  KC_DOT,  KC_K,    KC_RSFT,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
-                           LT(_FUNC,KC_ESC),LT(_LOWER,KC_SPC), LT(_ADJUST,KC_BSPC),         KC_SPC,  LT(_RAISE,KC_ENT),   LT(_ADJUST,KC_TAB)
+                           LT(_FUNC,KC_ESC),LT(_LOWER,KC_SPC), LT(_MOUSE,KC_BSPC),         KC_SPC,  LT(_RAISE,KC_ENT),   LT(_MOUSE,KC_TAB)
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
   ),
 
@@ -62,11 +62,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
      KC_MUTE, DE_HASH,  DE_DLR, DE_PIPE, DE_TILD,  KC_GRV, _______,          _______, DE_PLUS, DE_PERC, DE_DQUO, DE_QUOT, DE_SCLN, _______,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
-                                    _______, ADJUST, _______,                   _______, _______, _______
+                                    _______, _______, _______,                   _______, _______, _______
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
   ),
 
-  [_ADJUST] = LAYOUT(
+  [_MOUSE] = LAYOUT(
   //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
      _______, _______, _______, _______, _______, QK_BOOT,                            _______, _______, _______, _______, _______, _______,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
@@ -74,7 +74,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
      _______, LGUI_T(KC_C), LALT_T(KC_T), LCTL_T(KC_PSTE), LSFT_T(KC_COPY), KC_VOLU,   KC_WH_U, KC_MS_L, KC_MS_D, KC_MS_R, _______, _______,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     _______, _______, KC_ACL2, KC_ACL1, KC_ACL0,  KC_VOLD, DF(_BONE),       DF(_ADJUST), KC_WH_D, _______, _______, _______, KC_BTN4, _______,
+     _______, _______, KC_ACL2, KC_ACL1, KC_ACL0,  KC_VOLD, DF(_BONE),       DF(_MOUSE), KC_WH_D, _______, _______, _______, KC_BTN4, _______,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
                                     _______, _______, _______,                   KC_BTN1, KC_BTN2, KC_BTN3
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
@@ -82,59 +82,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_FUNC] = LAYOUT(
  //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
-     _______, _______, _______, _______, _______, _______,                            _______, _______, _______, _______, _______, _______,
+     KC_NO,   KC_NO,    KC_NO,   KC_NO,    KC_NO,    KC_NO,                           KC_NO,    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
  //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-    _______, _______, KC_BSPC, KC_DEL,  _______, _______,                            _______,   KC_F7,  KC_F8,   KC_F9,  KC_F12,  KC_NO,
+    _______, _______, KC_BSPC, KC_DEL,  _______, RGB_TOG,                            _______,   KC_F7,  KC_F8,   KC_F9,  KC_F12,  KC_NO,
  //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-    _______, _______, KC_LEFT, KC_RGHT, KC_UP, KC_PGUP,                               _______, RSFT_T(KC_F4), RCTL_T(KC_F5), LALT_T(KC_F6), LGUI_T(KC_F11), KC_NO,
+    _______, RGB_SPD, RGB_SPI, KC_RGHT, RGB_MODE_FORWARD, RGB_VAI,                               _______, RSFT_T(KC_F4), RCTL_T(KC_F5), LALT_T(KC_F6), LGUI_T(KC_F11), KC_NO,
  //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-    _______, _______, KC_HOME, KC_END, KC_DOWN, KC_PGDN, _______,           _______, _______, KC_F1,   KC_F2,   KC_F3,    KC_F10, _______,
+    _______, _______, KC_HOME, KC_END, KC_DOWN, RGB_MODE_REVERSE, RGB_VAD,           _______, _______, KC_F1,   KC_F2,   KC_F3,    KC_F10, _______,
  //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
-                                    _______, _______, _______,                  _______,  ADJUST,  _______
+                                    _______, _______, _______,                  _______, _______,  _______
                                // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
   )
 };
 
 
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-  switch (keycode) {
-    case BONE:
-      if (record->event.pressed) {
-        set_single_persistent_default_layer(_BONE);
-      }
-      return false;
-      break;
-    case LOWER:
-      if (record->event.pressed) {
-        layer_on(_LOWER);
-        update_tri_layer(_LOWER, _RAISE, _ADJUST);
-      } else {
-        layer_off(_LOWER);
-        update_tri_layer(_LOWER, _RAISE, _ADJUST);
-      }
-      return false;
-      break;
-    case RAISE:
-      if (record->event.pressed) {
-        layer_on(_RAISE);
-        update_tri_layer(_LOWER, _RAISE, _ADJUST);
-      } else {
-        layer_off(_RAISE);
-        update_tri_layer(_LOWER, _RAISE, _ADJUST);
-      }
-      return false;
-      break;
-    case ADJUST:
-      if (record->event.pressed) {
-        layer_on(_ADJUST);
-      } else {
-        layer_off(_ADJUST);
-      }
-      return false;
-      break;
-  }
-  return true;
-}
 
 // Adding keycodes not deactivatin caps word
 // DE_UNDS
@@ -215,7 +176,7 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
                     tap_code(KC_WH_L);
                 }
                 break;
-            case _ADJUST:
+            case _MOUSE:
                 if (clockwise){
                     tap_code(KC_VOLU);
                 } else{
