@@ -96,45 +96,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-  switch (keycode) {
-    case BONE:
-      if (record->event.pressed) {
-        set_single_persistent_default_layer(_BONE);
-      }
-      return false;
-      break;
-    case LOWER:
-      if (record->event.pressed) {
-        layer_on(_LOWER);
-        update_tri_layer(_LOWER, _RAISE, _MOUSE);
-      } else {
-        layer_off(_LOWER);
-        update_tri_layer(_LOWER, _RAISE, _MOUSE);
-      }
-      return false;
-      break;
-    case RAISE:
-      if (record->event.pressed) {
-        layer_on(_RAISE);
-        update_tri_layer(_LOWER, _RAISE, _MOUSE);
-      } else {
-        layer_off(_RAISE);
-        update_tri_layer(_LOWER, _RAISE, _MOUSE);
-      }
-      return false;
-      break;
-    case MOUSE:
-      if (record->event.pressed) {
-        layer_on(_MOUSE);
-      } else {
-        layer_off(_MOUSE);
-      }
-      return false;
-      break;
-  }
-  return true;
-}
 
 // Adding keycodes not deactivatin caps word
 // DE_UNDS
