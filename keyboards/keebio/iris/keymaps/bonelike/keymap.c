@@ -126,10 +126,16 @@ bool caps_word_press_user(uint16_t keycode) {
 const uint16_t PROGMEM insert_combo[] = {KC_F, KC_V, COMBO_END};
 const uint16_t PROGMEM insert_combo_onefinger[] = {LGUI_T(KC_C), KC_J, COMBO_END};
 const uint16_t PROGMEM esc_combo[] = {LSFT_T(KC_E), KC_O, COMBO_END};
+const uint16_t PROGMEM q_combo[] = {LGUI_T(KC_G), KC_W, COMBO_END};
+const uint16_t PROGMEM ss_combo[] = {LALT_T(KC_S), KC_M, COMBO_END};
+const uint16_t PROGMEM at_combo[] = {DE_COLN, DE_AMPR, COMBO_END};
 
 combo_t key_combos[] = {
     COMBO(insert_combo, KC_INSERT),
     COMBO(insert_combo_onefinger, KC_INSERT),
     COMBO(esc_combo, KC_ESC),
+    COMBO(q_combo, KC_Q),
+    COMBO(ss_combo, DE_SS),
+    COMBO(at_combo, DE_AT),
 };
 
