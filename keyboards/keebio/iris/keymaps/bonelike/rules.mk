@@ -2,7 +2,7 @@
 #   change yes to no to disable
 #
 MOUSEKEY_ENABLE = yes        # Mouse keys
-ENCODER_ENABLE = yes
+ENCODER_ENABLE = no
 RGB_MATRIX_ENABLE = no
 CAPS_WORD_ENABLE = yes
 COMBO_ENABLE = yes
